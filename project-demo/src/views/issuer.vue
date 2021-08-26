@@ -2,15 +2,18 @@
   <div class="parent1">
     <div class="child_side1"></div>
     <div class="child_center1">
-      <br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br>
       <center>
-        <div class="blink">
-          <h2 class="fadedin">Credential Issuer page</h2>
+        <div class="fadedin">
+          <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" height="180" width="180"/>
+          <h2 class="fadedin">재학-졸업 증명서 발급</h2>
           <br><br>
-          <h5 class="sweep">If you want to issue verifiable credeatial, Click on 'receive button'</h5>
+          <h5 class="sweep">재학 및 졸업 증명서 발급을 원하신다면 아래 버튼을 클릭해주세요.</h5>
         </div>
-        <div>
-          <button id='receiveButton' class="btn rcv-btn fadedin">Receive</button>
+        <div class="fadedin">
+          <router-link to = "/issuer2">
+            <button class="btn rcv-btn fadedin">Receive</button>
+          </router-link>
         </div>
       </center>
     </div>

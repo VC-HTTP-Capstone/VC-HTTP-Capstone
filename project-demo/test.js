@@ -284,15 +284,15 @@ const testCredential = {
     ],
     "id": "http://example.edu/credentials/1872",
     "type": ["VerifiableCredential", "UniversityDegreeCredential"],
-    "issuer": "https://example.edu/issuers/565049",
+    "issuer": "https://github.com/VC-HTTP-Capstone",
     "issuanceDate": "2010-01-01T19:73:24Z",
     "credentialSubject": {
       "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
       "alumniOf": {
         "id": "did:example:c276e12ec21ebfeb1f712ebc6f1",
         "name": {
-          "@value": "Example University",
-          "@language": "en"
+          "@value": "Hanyang University(ERICA)",
+          "@language": "kr"
         }
       }
     },
@@ -423,6 +423,42 @@ async function onClickRequest() {
     console.log('Result of get() request:', JSON.stringify(result, null, 2));
 }
 
+function cli(){
+  const name = document.getElementById('name').value;
+  const id = document.getElementById('id').value;
+  testCredential['verifiableCredential'][0]['id'] += id;
+  console.log(testCredential['verifiableCredential'][0]['id']);
+  let today = new Date();
+  const date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + "T19:73:24Z";
+  console.log(date);
+  testCredential['verifiableCredential'][0]["issuanceDate"] = date;
 
-const method = {registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, login, logout, refreshUserArea, clearWalletDisplay, saveCurrentUser};
+  console.log(testCredential['verifiableCredential'][0]["issuer"]);
+  if($('input:radio[name=attend]').is(':checked')){
+    testCredential['verifiableCredential'][0]['credentialSubject']['attendanceOf'] = {
+      "id": "did:example:c276e12ec21ebfeb1f712ebc6f2",
+      "name": {
+        "@value": "Hanyang University(ERICA)",
+        "@language": "kr",
+      }
+    }
+  }
+  else if($('input:radio[name=graduate]').is(':checked')){
+    testCredential['verifiableCredential'][0]['credentialSubject']['alumniOf'] = {
+      "id": "did:example:c276e12ec21ebfeb1f712ebc6f1",
+      "name": {
+        "@value": "Hanyang University(ERICA)",
+        "@language": "kr",
+      }
+    }
+  }
+
+  console.log(testCredential['verifiableCredential'][0]['credentialSubject']['alumniOf']);
+  console.log(testCredential['verifiableCredential'][0]['credentialSubject']['attendanceOf']);
+  console.log(testCredential['verifiableCredential'][0]['credentialSubject']);
+
+  onClickReceive();
+}
+
+const method = {cli, registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, login, logout, refreshUserArea, clearWalletDisplay, saveCurrentUser};
 export default method

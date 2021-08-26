@@ -11,6 +11,7 @@ import Walletworker from "../views/wallet-worker.vue";
 import Walletuistore from "../views/wallet-ui-store.vue";
 import Walletuiget from "../views/wallet-ui-get.vue";
 import Issuer from "../views/issuer.vue"
+import Issuer2 from "../views/issuer2.vue"
 
 
 Vue.use(VueRouter);
@@ -29,6 +30,10 @@ export const router = new VueRouter({
         {
             path: "/issuer", //path: url 주소
             component: Issuer // component: url주소로 갔을 때 표시될 컴포넌트
+        },
+        {
+            path: "/issuer2", //path: url 주소
+            component: Issuer2 // component: url주소로 갔을 때 표시될 컴포넌트
         },
         {
             path: "/wallet", //path: url 주소
