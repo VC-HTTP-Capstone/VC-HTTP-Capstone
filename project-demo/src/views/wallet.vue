@@ -33,13 +33,15 @@
 
 <script>
 import test from '../../test.js'
-test.registerWalletWithBrowser();
-test.onDocumentReadyforwallet(() => {
-  document.getElementById('loginButton').addEventListener('click', test.login);
-  document.getElementById('logoutButton').addEventListener('click', test.logout);
-  refreshUserArea();
-});
 export default {
+  mounted(){
+    test.registerWalletWithBrowser();
+    test.onDocumentReadyforwallet(() => {
+      document.getElementById('loginButton').addEventListener('click', test.login);
+      document.getElementById('logoutButton').addEventListener('click', test.logout);
+      test.refreshUserArea();
+    });
+  }
 }
 </script>
 

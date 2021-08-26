@@ -25,18 +25,14 @@
 
 <script>
   import test from '../../test.js'
-
-  test.ready(() => {
-    document.getElementById('requestButton').addEventListener('click', test.onClickRequest());
-    console.log('Document ready.')
-  })
-
-
-
-
-
-
-
+  export default {
+    mounted(){
+      test.ready(() => {
+        document.getElementById('requestButton').addEventListener('click', test.onClickRequest());
+        console.log('Document ready.')
+      })
+    }
+  }
 </script>
 
 <style lang="css" scoped>
