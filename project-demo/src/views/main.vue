@@ -37,7 +37,7 @@
         <hr class="mr-t">
         <div class="logo">
           <img class="logo-picture" src="../images/github-logo.jpg" width="100" height="90">
-          <a class="gitlink" href="https://github.com/qsc7342/VC-HTTP-CAPSTONE">https://github.com/qsc7342/VC-HTTP-CAPSTONE</a>
+          <a class="gitlink" href="https://github.com/VC-HTTP-Capstone/VC-HTTP-Capstone">https://github.com/VC-HTTP-Capstone/VC-HTTP-Capstone</a>
         </div>
         <hr class="halfline">
         <div class="logo">
