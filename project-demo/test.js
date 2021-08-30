@@ -282,19 +282,12 @@ const testCredential = {
       "https://www.w3.org/2018/credentials/v1",
       "https://www.w3.org/2018/credentials/examples/v1"
     ],
-    "id": "http://example.edu/credentials/1872",
+    "id": "http://example.edu/credentials/",
     "type": ["VerifiableCredential", "UniversityDegreeCredential"],
     "issuer": "https://github.com/VC-HTTP-Capstone",
     "issuanceDate": "2010-01-01T19:73:24Z",
     "credentialSubject": {
       "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
-      "alumniOf": {
-        "id": "did:example:c276e12ec21ebfeb1f712ebc6f1",
-        "name": {
-          "@value": "Hanyang University(ERICA)",
-          "@language": "kr"
-        }
-      }
     },
     "proof": {
       "type": "RsaSignature2018",
@@ -305,6 +298,34 @@ const testCredential = {
     }
   }]
 };
+
+// const testCredential = {
+//   "@context": [
+//     "https://www.w3.org/2018/credentials/v1",
+//     "https://www.w3.org/2018/credentials/examples/v1"
+//   ],
+//   "type": "VerifiablePresentation",
+//   "verifiableCredential": [{
+//     "@context": [
+//       "https://www.w3.org/2018/credentials/v1",
+//       "https://www.w3.org/2018/credentials/examples/v1"
+//     ],
+//     "id": "http://example.edu/credentials/",
+//     "type": ["VerifiableCredential", "UniversityDegreeCredential"],
+//     "issuer": "https://github.com/VC-HTTP-Capstone",
+//     "issuanceDate": "2010-01-01T19:73:24Z",
+//     "credentialSubject": {
+//       "id": "did:example:ebfeb1f712ebc6f1c276e12ec21"
+//     },
+//     "proof": {
+//       "type": "RsaSignature2018",
+//       "created": "2017-06-18T21:19:10Z",
+//       "proofPurpose": "assertionMethod",
+//       "verificationMethod": "https://example.edu/issuers/keys/1",
+//       "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
+//     }
+//   }]
+// };
 
 function ready(fn) {
   if(document.readyState !== 'loading') {
@@ -424,14 +445,19 @@ async function onClickRequest() {
 }
 
 function cli(){
+  delete testCredential['verifiableCredential'][0]['credentialSubject']['alumniOf'];
+  delete testCredential['verifiableCredential'][0]['credentialSubject']['attendanceOf'];
+
   const name = document.getElementById('name').value;
   const id = document.getElementById('id').value;
-  testCredential['verifiableCredential'][0]['id'] += id;
+  testCredential['verifiableCredential'][0]['id'] = "http://example.edu/credentials/" + id;
   console.log(testCredential['verifiableCredential'][0]['id']);
   let today = new Date();
   const date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + "T19:73:24Z";
   console.log(date);
   testCredential['verifiableCredential'][0]["issuanceDate"] = date;
+  testCredential['verifiableCredential'][0]["proof"]["created"] = date;
+
 
   console.log(testCredential['verifiableCredential'][0]["issuer"]);
   if($('input:radio[name=attend]').is(':checked')){
