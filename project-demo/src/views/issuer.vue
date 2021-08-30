@@ -28,7 +28,10 @@
   export default {
     mounted(){
       test.ready(() => {
-        document.getElementById('receiveButton').addEventListener('click', test.onClickReceive);
+        const receiveBtn = document.getElementById('receiveButton');
+        window.onload = function() {
+          receiveBtn.addEventListener('click', test.onClickReceive);
+        }
         console.log('Document ready.')
       })
     }
