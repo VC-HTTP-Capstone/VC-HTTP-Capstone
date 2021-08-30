@@ -7,13 +7,14 @@
           <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
           <span style="font-size:60px; margin-bottom:100px;">재학-졸업 증명서 발급</span>
         </div>
-        <div style="font-size:20px;" class="test fadedin bordering t-font">
+        <div style="font-size:20px;" class="ctest fadedin bordering t-font">
           NAME<br><br><input type="text" style="text-align:center;" id="name">
           <br><br>
           <hr style="border: 1px solid gray ">
           STUDENT ID<br><br><input type="text" style="text-align:center;" id="id">
           <br>
-          <button class="btn rcv-btn fadedin" type="button" id="confirmbutton">확인</button>
+          <div v-if="radioValues == 'graduate'"><button class="btn rcv-btn fadedin" type="button" id="confirmbutton" v-on:click="testt">확인</button></div>
+          <div v-else><button class="btn rcv-btn fadedin" type="button" v-on:click="ttest">확인</button></div>
         </div>
       </center>
       <div class="fadedin">
@@ -21,7 +22,7 @@
           <center>
             <img src="../images/attending.png" style="margin-left: 35px;"width="300" height="250">
             <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
+              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
             </div>
           </center>
         </div>
@@ -29,7 +30,7 @@
           <center>
             <img src="../images/graduate.png" width="300" height="250">
             <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
+              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
             </div>
           </center>
         </div>
@@ -42,9 +43,6 @@
 <script>
   import test from '../../test.js'
 
-  test.ready(() => {
-    document.getElementById('confirmbutton').addEventListener('click', test.cli);
-  })
 
   export default {
     data(){
@@ -53,9 +51,16 @@
         }
     },
     mounted(){
-      test.ready(() => {
-        document.getElementById('confirmbutton').addEventListener('click', test.cli);
-      })
+    },
+    methods:{
+      ttest: function(){
+        console.log(this.radioValues);
+      },
+      testt: function(){
+        test.ready(() => {
+          document.getElementById('confirmbutton').addEventListener('click', test.cli);
+        })
+      }
     }
   }
 </script>
@@ -246,7 +251,7 @@ div.right {
 .fadedin{
   animation: fade-in 1.5s ease-in-out;
 }
-.test{
+.ctest{
     padding: 20px;
     width: 40%;
     border-radius: 5px;
