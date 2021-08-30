@@ -37,8 +37,14 @@ export default {
   mounted(){
     test.registerWalletWithBrowser();
     test.onDocumentReadyforwallet(() => {
-      document.getElementById('loginButton').addEventListener('click', test.login);
-      document.getElementById('logoutButton').addEventListener('click', test.logout);
+      const loginBtn = document.getElementById('loginButton');
+      const logoutBtn = document.getElementById('loginButton');
+      window.onload = function() {
+        loginBtn.addEventListener('click', test.login);
+      }
+      window.onload = function() {
+        logoutBtn.addEventListener('click', test.logout);
+      }
       test.refreshUserArea();
     });
   }
