@@ -2,35 +2,40 @@
   <div class="parent1">
     <div class="child_side1"></div>
     <div class="child_center1">
-      <div class="test fadedin bordering">
-        NAME<br><br><input type="text" style="text-align:center;" id="name">
-        <br><br>
-        <hr style="border: 1px solid gray">
-        STUDENT ID<br><br><input type="text" style="text-align:center;" id="id">
-        <br>
-        <button type="button" id="confirmbutton">확인</button>
-      </div>
+      <center>
+        <div class="marg-tb2">
+          <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
+          <span style="font-size:60px; margin-bottom:100px;">재학-졸업 증명서 발급</span>
+        </div>
+        <div style="font-size:20px;" class="test fadedin bordering t-font">
+          NAME<br><br><input type="text" style="text-align:center;" id="name">
+          <br><br>
+          <hr style="border: 1px solid gray ">
+          STUDENT ID<br><br><input type="text" style="text-align:center;" id="id">
+          <br>
+          <button class="btn rcv-btn fadedin" type="button" id="confirmbutton">확인</button>
+        </div>
+      </center>
       <div class="fadedin">
-        <div style="
-          position: absolute;
-          left:20%;
-          top:50%;">
-        <img src="../images/attending.png" width="360" height="320">
-        <label><input type="radio" name="attend" v-model="radioValues" value="attending">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
-        <h3>재학증명서 발급하기</h3>
-      </div>
-      <div style="
-      position: absolute;
-      left:55%;
-      top:50%;">
-        <img src="../images/graduate.png" width="360" height="320">
-        <label><input type="radio" name="graduate" v-model="radioValues" value="graduate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
-        <h3>졸업증명서 발급하기</h3>
+        <div class="left">
+          <center>
+            <img src="../images/attending.png" style="margin-left: 35px;"width="300" height="250">
+            <div class="marg-tb">
+              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
+            </div>
+          </center>
+        </div>
+        <div class="right">
+          <center>
+            <img src="../images/graduate.png" width="300" height="250">
+            <div class="marg-tb">
+              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
+            </div>
+          </center>
+        </div>
       </div>
     </div>
-
-  </div>
-  <div class="child_side1"></div>
+    <div class="child_side1"></div>
   </div>
 </template>
 
@@ -212,7 +217,7 @@ div.right {
 }
 .parent1 {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 .child_side1 {
   flex: 1;
@@ -242,14 +247,13 @@ div.right {
   animation: fade-in 1.5s ease-in-out;
 }
 .test{
-    position: absolute;
     padding: 20px;
-    width: 30%;
+    width: 40%;
     border-radius: 5px;
     top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
   }
   input[type=text] {
       border : 2px solid ForestGreen;
@@ -261,8 +265,32 @@ div.right {
 }
 
 input[type="radio"]{
-    height: 19px;
+    height: 30px;
     opacity: 1;
     width: 20px;
+}
+.marg-tb{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.marg-tb2{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h2, h5 {
+  font-family: 'Abel', sans-serif;
+}
+.t-font{
+  font-family: 'Abel', sans-serif;
+}
+.rcv-btn {
+  border: 0;
+  outline: none;
+  border-radius: 40px;
+  margin-top: 10px;
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+
 }
 </style>
