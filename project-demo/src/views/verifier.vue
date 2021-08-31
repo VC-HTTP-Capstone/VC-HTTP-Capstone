@@ -7,16 +7,29 @@
           <br><br>
           <h2 class="fadedin">Credential Verifier page</h2>
           <br><br>
-          <h5 class="sweep">If you want to verify verifiable credeatial, Click on 'Request button'</h5>
-          <a style="color:white" class="btn conf-btn fadedin" id="requestButton">Request</a>
-        </center>
+          <h5 class="sweep">If you want to verify verifiable credential, Click on <br>'proof of enrollment' or 'diploma'</h5>
+          <br><br>
+          <div class="fadedin">
+            <div class="left">
+            <center>
+            <img src="../images/attending.png" style="margin-left: 135px" width="300" height="250">
+            </center>
+            </div>
+            <div class="right">
+            <center>
+            <img src="../images/graduate.png" style="margin-right: 135px" width="300" height="250">
+            </center>
+          </div>
       </div>
-      <hr class="halfline">
-      <div id="resultsPanel">
-        <center>
-          <p><strong style="color:white" class="text bg-dark sweep">Result of Request</strong></p>
+          <div class="fadedin">
+            <router-link to = "/verifier-inschool">
+              <button style="color:white" class="btn conf-btn fadedin" id="inSchoolButton">proof of enrollment</button>
+            </router-link>
+            <router-link to = "/verifier-graduation">
+              <button style="color:white" class="btn conf-btn fadedin" id="graduationButton">diploma</button>
+            </router-link>
+          </div>
         </center>
-        <code style="color:black" id="getResults" class="fadedin"></code>
       </div>
     </div>
     <div class="child_side1"></div>
@@ -24,14 +37,8 @@
 </template>
 
 <script>
-  import test from '../../test.js'
   export default {
-    mounted(){
-      test.ready(() => {
-        document.getElementById('requestButton').addEventListener('click', test.onClickRequest());
-        console.log('Document ready.')
-      })
-    }
+
   }
 </script>
 
@@ -64,29 +71,19 @@
     letter-spacing: 2px;
     padding-top: 7px;
   }
-  .marg{
-    margin-top:70px;
+  .sweep{
+    animation: sweep 1.5s ease-in-out;
   }
-  .text{
-    display:inline-block;
-    font-size:1.2em;
-    margin-top: 10px;
-    border-radius: 40px;
-    border-color: white;
-    border: 2px solid lightgray;
-    width: 40%;
-    text-align: center;
-    padding: 10px 20px;
+  .fadedin{
+    animation: fade-in 1.5s ease-in-out;
   }
-  .halfline {
-    border-width: 5px;
-    margin-top: 70px;
+  h2, h5 {
+    font-family: 'Abel', sans-serif;
   }
   @keyframes sweep {
     0%    {opacity: 0; transform: translateX(-10px)}
     100%  {opacity: 1; transform: translateX(0)}
   }
-
   @keyframes fade-in {
     0% {
       opacity: 0;
@@ -95,7 +92,6 @@
       opacity: 1;
     }
   }
-
   @keyframes slide-in {
      0% {
       top: -300px;
@@ -104,7 +100,6 @@
       top: 0;
     }
   }
-
   @keyframes scaleDown {
      0% {
       transform: scale(1);
@@ -119,7 +114,6 @@
       transform: scale(1);
     }
   }
-
   @keyframes reveal-info {
     0% {
       height: 0;
@@ -134,7 +128,6 @@
       height: 0;
     }
   }
-
   @-webkit-keyframes blink{
      0% {opacity:0;}
      100% {opacity:1;}
@@ -147,18 +140,4 @@
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  .blinking{
-    -webkit-animation:blink 1.5s ease-in-out infinite alternate;
-    -moz-animation:blink 1.5s ease-in-out infinite alternate;
-    animation:blink 1.5s ease-in-out infinite alternate;
-  }
- .sweep{
-   animation: sweep 1.5s ease-in-out;
- }
- .fadedin{
-   animation: fade-in 1.5s ease-in-out;
- }
- h2, h5 {
-   font-family: 'Abel', sans-serif;
- }
 </style>

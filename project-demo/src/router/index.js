@@ -10,10 +10,16 @@ import Verifier from "../views/verifier.vue";
 import Walletworker from "../views/wallet-worker.vue";
 import Walletuistore from "../views/wallet-ui-store.vue";
 import Walletuiget from "../views/wallet-ui-get.vue";
+<<<<<<< Updated upstream
 import Issuer from "../views/issuer.vue"
 import Issuer2 from "../views/issuer2.vue"
 import Issuer3 from "../views/issuer3.vue"
 import Issuer4 from "../views/issuer4.vue"
+=======
+import Issuer from "../views/issuer.vue";
+import Issuer2 from "../views/issuer2.vue";
+import Verifierinschool from "../views/verifier-inschool.vue";
+>>>>>>> Stashed changes
 
 
 Vue.use(VueRouter);
@@ -84,8 +90,12 @@ export const router = new VueRouter({
             ]
         },
         {
-          path: "/verifier",
-          component: Verifier
-        }
+            path: "/verifier",
+            component: Verifier
+        },
+        {
+          path: "/verifier-inschool",
+          component: Verifierinschool
+        },
     ]
 });

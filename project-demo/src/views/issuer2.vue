@@ -11,7 +11,7 @@
       <div style="margin-top:100px;" class="fadedin">
         <div class="left">
           <center>
-            <img src="../images/attending.png" style="margin-left: 35px;"width="300" height="250">
+            <img src="../images/attending.png" style="margin-left: 35px" width="300" height="250">
             <div class="marg-tb">
               <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
             </div>
