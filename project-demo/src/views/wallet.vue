@@ -38,7 +38,7 @@ export default {
     test.registerWalletWithBrowser();
     test.onDocumentReadyforwallet(() => {
       const loginBtn = document.getElementById('loginButton');
-      const logoutBtn = document.getElementById('loginButton');
+      const logoutBtn = document.getElementById('logoutButton');
       window.onload = function() {
         loginBtn.addEventListener('click', test.login);
       }
