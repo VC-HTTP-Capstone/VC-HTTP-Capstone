@@ -284,7 +284,7 @@ input[type="radio"]{
     width: 20px;
 }
 .marg-tb{
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 .marg-tb2{

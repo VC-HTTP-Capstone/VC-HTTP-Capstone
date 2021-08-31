@@ -436,7 +436,7 @@ async function onClickRequest() {
 
     const result = await navigator.credentials.get(credentialQuery);
 
-    document.getElementById('resultsPanel').classList.remove('hide');
+    document.getElementById('resultsPanel')
     document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
     console.log('Result of get() request:', JSON.stringify(result, null, 2));
@@ -483,7 +483,7 @@ async function onClickRequest2() {
 
     const result = await navigator.credentials.get(credentialQuery);
 
-    document.getElementById('resultsPanel').classList.remove('hide');
+    document.getElementById('resultsPanel')
     document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
     console.log('Result of get() request:', JSON.stringify(result, null, 2));

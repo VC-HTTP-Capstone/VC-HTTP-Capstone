@@ -6,17 +6,15 @@
 
         <center>
           <br><br><br><br>
-          <h2>Wallet</h2>
-          <h5>
-            Check Current Wallet Status
-          </h5>
+          <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
+          <span style="font-size:60px; margin-bottom:100px;">증명서 쑥대밭</span>
           <br><br>
           <div id="logged-in">
-            <p><strong style="color:white" class="text bg-dark">User</strong> </p><p> <span class="text2" id="username"></span></p>
+            <p><strong style="color:white" class="text bg-dark">이름</strong> </p><p> <span class="text2" id="username"></span></p>
             <br><br>
-            <p><strong style="color:white" class="text bg-dark">Wallet Contents</strong></p><p> <span class="text3" id="walletContents"></span></p>
+            <p><strong style="color:white" class="text bg-dark">증명서</strong></p><p> <span class="text3" id="walletContents"></span></p>
 
-            <a style="color:white" class="btn conf-btn" id="logoutButton">remove</a>
+            <a style="color:white" class="btn conf-btn" id="logoutButton">삭제</a>
           </div>
 
           <div class="hide" id="logged-out">

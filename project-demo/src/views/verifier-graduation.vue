@@ -13,7 +13,11 @@
         </center>
       </div>
 
-      <div class="hide" id="getResults">
+      <div class="hide" id="resultsPanel">
+        <center>
+          <p><strong style="color:white" class="text bg-dark sweep">Result of Request</strong></p>
+        </center>
+        <code style="color:black" id="getResults" class="fadedin"></code>
       </div>
     </div>
     <div class="child_side1"></div>

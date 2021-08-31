@@ -12,7 +12,7 @@
         </div>
         <div class="fadedin">
           <router-link to = "/issuer2">
-            <button class="btn rcv-btn fadedin">Receive</button>
+            <button class="btn rcv-btn fadedin">발급받기</button>
           </router-link>
         </div>
       </center>
