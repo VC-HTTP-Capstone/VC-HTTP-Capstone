@@ -423,7 +423,7 @@ async function onClickRequest() {
           "query": [{
             "type": "QueryByExample",
             "credentialQuery": {
-              "reason": "재학 중이시군요",
+              "reason": loadCurrentUser() + "님의 "+ identifytype() + " 확인을 요청합니다.",
               "example": {
                 "@context": [
                   "https://w3id.org/credentials/v1",
@@ -470,7 +470,7 @@ async function onClickRequest2() {
           "query": [{
             "type": "QueryByExample",
             "credentialQuery": {
-              "reason": loadCurrentUser() + "님의 "+ identifytype() + "을 요청합니다.",
+              "reason": loadCurrentUser() + "님의 "+ identifytype() + "확인을 요청합니다.",
               "example": {
                 "@context": [
                   "https://w3id.org/credentials/v1",
