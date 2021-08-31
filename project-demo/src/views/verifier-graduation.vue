@@ -2,16 +2,18 @@
   <div class="parent1">
     <div class="child_side1"></div>
     <div class="child_center1">
+      <br><br><br><br><br><br><br>
       <div>
-        <center>
+        <center class="fadedin">
+          <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" height="180" width="180"/>
+          <h2>졸업증명서 제출</h2>
           <br><br>
-          <h2 class="fadedin">Credential Verifier page</h2>
-          <br><br>
-          <h5 class="sweep">If you want to verify verifiable credeatial, Click on 'Request button'</h5>
-          <a style="color:white" class="btn conf-btn fadedin" id="requestButton">Request</a>
+          <h5 class="sweep">졸업 증명서 제출을 원하신다면 아래 버튼을 눌러주세요.</h5>
+          <a style="color:white" class="btn conf-btn fadedin" id="requestButton">제출</a>
         </center>
       </div>
       <hr class="halfline">
+
       <div id="resultsPanel">
         <center>
           <p><strong style="color:white" class="text bg-dark sweep">Result of Request</strong></p>
@@ -28,7 +30,7 @@
   export default {
     mounted(){
       test.ready(() => {
-        document.getElementById('requestButton').addEventListener('click', test.onClickRequest());
+        document.getElementById('requestButton').addEventListener('click', test.onClickRequest2());
         console.log('Document ready.')
       })
     }

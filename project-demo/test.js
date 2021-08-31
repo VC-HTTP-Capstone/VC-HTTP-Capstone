@@ -450,6 +450,54 @@ async function onClickRequest() {
     }
 }
 
+
+async function onClickRequest2() {
+  //   document.getElementById('getResults').innerHTML = ''; // clear results
+    const credentialQuery =   {
+      "web": {
+        "VerifiablePresentation": {
+          "query": [{
+            "type": "QueryByExample",
+            "credentialQuery": {
+              "reason": "님 졸업자맞아용?",
+              "example": {
+                "@context": [
+                  "https://w3id.org/credentials/v1",
+                  "https://www.w3.org/2018/credentials/examples/v1"
+                ],
+                "type": ["UniversityDegreeCredential"],
+                "credentialSubject": {
+                  "id": "did:example:ebfeb1f712ebc6f1c276e12ec21"
+                }
+              }
+            }
+          }]
+        },
+        "recommendedHandlerOrigins": [
+          "https://chapi-demo-wallet.digitalbazaar.com",
+          "https://localhost:8080"
+        ]
+      }
+    }
+
+    console.log('Requesting credential...');
+    document.getElementById('getResults').innerText = 'Requesting credential...';
+
+    const result = await navigator.credentials.get(credentialQuery);
+
+    document.getElementById('resultsPanel').classList.remove('hide');
+    document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
+
+    console.log('Result of get() request:', JSON.stringify(result, null, 2));
+    if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('alumniOf')) {
+      console.log("앙 졸업띠");
+    }
+    else {
+      console.log("졸업자 아닌데용?");
+    }
+}
+
+
 function cli(){
   delete testCredential['verifiableCredential'][0]['credentialSubject']['alumniOf'];
   delete testCredential['verifiableCredential'][0]['credentialSubject']['attendanceOf'];
@@ -492,5 +540,5 @@ function cli(){
   onClickReceive();
 }
 
-const method = {cli, registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, login, logout, refreshUserArea, clearWalletDisplay, saveCurrentUser};
+const method = {onClickRequest2, cli, registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, login, logout, refreshUserArea, clearWalletDisplay, saveCurrentUser};
 export default method
