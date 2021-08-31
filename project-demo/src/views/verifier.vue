@@ -3,11 +3,12 @@
     <div class="child_side1"></div>
     <div class="child_center1">
       <div>
-        <center>
+        <center class="fadedin">
           <br><br>
-          <h2 class="fadedin">Credential Verifier page</h2>
+          <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
+          <h2 class="fadedin">증명서 제출 페이지</h2>
           <br><br>
-          <h5 class="sweep">If you want to verify verifiable credential, Click on <br>'proof of enrollment' or 'diploma'</h5>
+          <h5 class="sweep">제출하려는 증명서를 선택해 주세요</h5>
           <br><br>
           <div class="fadedin">
             <div class="left">
@@ -23,10 +24,10 @@
       </div>
           <div class="fadedin">
             <router-link to = "/verifier-inschool">
-              <button style="color:white" class="btn conf-btn fadedin" id="inSchoolButton">proof of enrollment</button>
+              <button style="color:white" class="btn conf-btn fadedin" id="inSchoolButton">재학증명서</button>
             </router-link>
             <router-link to = "/verifier-graduation">
-              <button style="color:white" class="btn conf-btn fadedin" id="graduationButton">diploma</button>
+              <button style="color:white" class="btn conf-btn fadedin" id="graduationButton">졸업증명서</button>
             </router-link>
           </div>
         </center>
