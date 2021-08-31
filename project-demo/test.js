@@ -442,6 +442,12 @@ async function onClickRequest() {
     document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
     console.log('Result of get() request:', JSON.stringify(result, null, 2));
+    if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('alumniOf')) {
+      console.log("앙 졸업띠");
+    }
+    if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('attendanceOf')) {
+      console.log("앙 재학띠");
+    }
 }
 
 function cli(){
