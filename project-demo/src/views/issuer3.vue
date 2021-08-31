@@ -5,41 +5,17 @@
       <center>
         <div class="marg-tb2">
           <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
-          <span style="font-size:60px; margin-bottom:100px;">증명서 발급</span>
+          <span style="font-size:60px; margin-bottom:100px;">재학 증명서 발급</span>
+        </div>
+        <div style="font-size:20px;" class="ctest fadedin bordering t-font">
+          NAME<br><br><input type="text" style="text-align:center;" id="name">
+          <br><br>
+          <hr style="border: 1px solid gray ">
+          STUDENT ID<br><br><input type="text" style="text-align:center;" id="id">
+          <br>
+          <button class="btn rcv-btn fadedin" type="button" id="confirmbutton">확인</button>
         </div>
       </center>
-      <div style="margin-top:100px;" class="fadedin">
-        <div class="left">
-          <center>
-            <img src="../images/attending.png" style="margin-left: 35px;"width="300" height="250">
-            <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
-            </div>
-          </center>
-        </div>
-        <div class="right">
-          <center>
-            <img src="../images/graduate.png" width="300" height="250">
-            <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
-            </div>
-          </center>
-        </div>
-        <div>
-          <center>
-            <div v-if="radioValues == 'attending'">
-              <router-link to = "/issuer3">
-                <button class="btn rcv-btn fadedin" type="button" v-on:click="testt">확인</button>
-              </router-link>
-            </div>
-            <div v-else-if="radioValues == 'graduate'">
-              <router-link to = "/issuer4">
-                <button class="btn rcv-btn fadedin" type="button" v-on:click="testt">확인</button>
-              </router-link>
-            </div>
-          </center>
-        </div>
-      </div>
     </div>
     <div class="child_side1"></div>
   </div>
@@ -65,10 +41,9 @@
         console.log(this.radioValues);
       },
       testt: function(){
-        document.getElementById('confirmbutton').addEventListener('click', test.cli);
-      },
-      test1 :function(){
-        console.log(this.radioValues);
+        test.ready(() => {
+          document.getElementById('confirmbutton').addEventListener('click', test.cli);
+        })
       }
     }
   }
@@ -260,7 +235,7 @@ div.right {
 .fadedin{
   animation: fade-in 1.5s ease-in-out;
 }
-.test{
+.ctest{
     padding: 20px;
     width: 40%;
     border-radius: 5px;
