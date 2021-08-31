@@ -7,7 +7,7 @@
         <center>
           <br><br><br><br>
           <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
-          <span style="font-size:60px; margin-bottom:100px;">증명서 쑥대밭</span>
+          <span style="font-size:60px; margin-bottom:100px;">증명서 확인</span>
           <br><br>
           <div id="logged-in">
             <p><strong style="color:white" class="text bg-dark">이름</strong> </p><p> <span class="text2" id="username"></span></p>

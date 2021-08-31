@@ -402,6 +402,19 @@ async function handleGetEvent() {
   });
 }
 
+function identifytype(){
+  var type;
+  if(Object.keys(testCredential['verifiableCredential'][0]['credentialSubject']).includes('alumniOf')){
+    console.log("yes!!!!!!!!!!!!!!!!!!!");
+    type = "졸업";
+  }
+  else if(Object.keys(testCredential['verifiableCredential'][0]['credentialSubject']).includes('attendanceOf')){
+    console.log("nnoooooooooooooooooooo");
+    type = "재학";
+  }
+  return type;
+}
+
 async function onClickRequest() {
   //   document.getElementById('getResults').innerHTML = ''; // clear results
     const credentialQuery =   {
@@ -457,7 +470,7 @@ async function onClickRequest2() {
           "query": [{
             "type": "QueryByExample",
             "credentialQuery": {
-              "reason": "님 졸업자맞아용?",
+              "reason": loadCurrentUser() + "님의 "+ identifytype() + "을 요청합니다.",
               "example": {
                 "@context": [
                   "https://w3id.org/credentials/v1",

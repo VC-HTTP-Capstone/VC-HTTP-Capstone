@@ -13,21 +13,21 @@
           <div class="fadedin">
             <div class="left">
             <center>
-            <img src="../images/attending.png" style="margin-left: 135px" width="300" height="250">
+            <img src="../images/attending.png" style="margin-left: 110px" width="300" height="250">
             </center>
             </div>
             <div class="right">
             <center>
-            <img src="../images/graduate.png" style="margin-right: 135px" width="300" height="250">
+            <img src="../images/graduate.png" style="margin-right: 110px" width="300" height="250">
             </center>
           </div>
       </div>
           <div class="fadedin">
             <router-link to = "/verifier-inschool">
-              <button style="color:white" class="btn conf-btn fadedin" id="inSchoolButton">재학증명서</button>
+              <button style="color:white" class="btn conf-btn fadedin marg-r" id="inSchoolButton">재학증명서</button>
             </router-link>
             <router-link to = "/verifier-graduation">
-              <button style="color:white" class="btn conf-btn fadedin" id="graduationButton">졸업증명서</button>
+              <button style="color:white" class="btn conf-btn fadedin marg-l" id="graduationButton">졸업증명서</button>
             </router-link>
           </div>
         </center>
@@ -59,14 +59,13 @@
     flex: 4;
   }
   .conf-btn {
-    width: 40%;
+    width: 35%;
     height: 50px;
     border: 0;
     outline: none;
     border-radius: 40px;
     margin-top: 30px;
-    margin-right: 10px;
-    margin-left: 10px;
+
     color: white;
     font-size: 1.2em;
     letter-spacing: 2px;
@@ -140,5 +139,11 @@
   @keyframes blink{
     0% {opacity:0;}
     100% {opacity:1;}
+  }
+  .marg-r{
+    margin-right: 60px;
+  }
+  .marg-l{
+    margin-left: 50px;
   }
 </style>
