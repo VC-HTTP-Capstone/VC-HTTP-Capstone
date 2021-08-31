@@ -8,10 +8,10 @@
           <span style="font-size:60px; margin-bottom:100px;">졸업 증명서 발급</span>
         </div>
         <div style="font-size:20px;" class="ctest fadedin bordering t-font">
-          NAME<br><br><input type="text" style="text-align:center;" id="name">
+          이름<br><br><input type="text" style="text-align:center;" id="name">
           <br><br>
           <hr style="border: 1px solid gray ">
-          STUDENT ID<br><br><input type="text" style="text-align:center;" id="id">
+          ID<br><br><input type="text" style="text-align:center;" id="id">
           <br>
           <button class="btn rcv-btn fadedin" type="button" id="confirmbutton">확인</button>
         </div>

@@ -82,7 +82,6 @@ function foo() {
 }
 
 function login() {
-  saveCurrentUser('jmk5315');
   refreshUserArea();
 }
 
@@ -240,7 +239,6 @@ function resetCurrentUser() {
 
 
 async function onClickReceive() {
-  saveCurrentUser('jmk5315');
   // document.getElementById('storeResults').innerHTML = ''; // clear results
 
   // Construct the WebCredential wrapper around the credential to be stored
@@ -504,6 +502,7 @@ function cli(){
 
   const name = document.getElementById('name').value;
   const id = document.getElementById('id').value;
+  saveCurrentUser(name);
   testCredential['verifiableCredential'][0]['id'] = "http://example.edu/credentials/" + id;
   console.log(testCredential['verifiableCredential'][0]['id']);
   let today = new Date();

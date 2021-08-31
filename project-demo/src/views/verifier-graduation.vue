@@ -9,16 +9,11 @@
           <h2>졸업증명서 제출</h2>
           <br><br>
           <h5 class="sweep">졸업 증명서 제출을 원하신다면 아래 버튼을 눌러주세요.</h5>
-          <a style="color:white" class="btn conf-btn fadedin" id="requestButton">제출</a>
+          <a style="color:white" class="btn conf-btn fadedin" id="requestButton" v-on:click="gtest">제출</a>
         </center>
       </div>
-      <hr class="halfline">
 
-      <div id="resultsPanel">
-        <center>
-          <p><strong style="color:white" class="text bg-dark sweep">Result of Request</strong></p>
-        </center>
-        <code style="color:black" id="getResults" class="fadedin"></code>
+      <div class="hide" id="getResults">
       </div>
     </div>
     <div class="child_side1"></div>
@@ -29,10 +24,14 @@
   import test from '../../test.js'
   export default {
     mounted(){
-      test.ready(() => {
-        document.getElementById('requestButton').addEventListener('click', test.onClickRequest2());
-        console.log('Document ready.')
-      })
+    },
+    methods: {
+      gtest:function(){
+        test.ready(() => {
+          document.getElementById('requestButton').addEventListener('click', test.onClickRequest2());
+          console.log('Document ready.')
+        })
+      }
     }
   }
 </script>

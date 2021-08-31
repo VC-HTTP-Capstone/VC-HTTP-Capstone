@@ -6,27 +6,31 @@
       <div class = "sweep">
         <div id="confirm">
           <br><br><br><br><br><br>
-          <div class="marg"></div>
-          <h2>Do you want receive this credential?</h2>
+          <div>
+            <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
+            <span style="font-size:60px; margin-bottom:100px;">증명서 확인</span>
+          </div>
           <div class="marg"></div>
 
           <p><strong style="color:white" class="text bg-dark">type</strong> <span class="text2" id="credentialType"></span></p>
 
           <p><strong style="color:white" class="text bg-dark">issuer</strong> <span class="text2" id="credentialIssuer"></span></p>
 
-          <a style="color:white" class="btn conf-btn" id="confirmButton">Confirm</a>
-          <a style="color:white" class="btn conf-btn" id="cancelButton">Cancel</a>
+          <a style="color:white" class="btn conf-btn" id="confirmButton">발급</a>
+          <a style="color:white" class="btn conf-btn" id="cancelButton">취소</a>
         </div>
 
         <div id="userArea" class="hide fadedin">
           <br><br><br><br>
-          <div class="marg"></div>
-          <h2>Credential stored!!!</h2>
+          <div>
+            <img src="https://www.hanyang.ac.kr/documents/20182/73809/HYU_logo_singlecolor_png.png/b8aabfbe-a488-437d-b4a5-bd616d1577da?t=1474070795276" style="vertical-align:top; margin-right:20px;" height="100" width="100"/>
+            <span style="font-size:60px; margin-bottom:100px;">증명서 발급 완료</span>
+          </div>
           <br>
-          <p><strong style="color:white" class="text bg-dark">User</strong> </p><p> <span class="text2" id="username"></span></p>
-          <p><strong style="color:white" class="text bg-dark">Wallet Contents</strong></p><p> <span class="text3" id="walletContents"></span></p>
+          <p><strong style="color:white" class="text bg-dark">이름</strong> </p><p> <span class="text2" id="username"></span></p>
+          <p><strong style="color:white" class="text bg-dark">증명서</strong></p><p> <span class="text3" id="walletContents"></span></p>
 
-          <a class="btn conf-btn" id="doneButton">Done</a>
+          <a class="btn conf-btn" id="doneButton">확인</a>
         </div>
       </div>
 
@@ -120,7 +124,7 @@ export default {
     outline: none;
   }
   .marg{
-    margin-top:70px;
+    margin-top:40px;
   }
   @keyframes sweep {
     0%    {opacity: 0; transform: translateX(-10px)}
