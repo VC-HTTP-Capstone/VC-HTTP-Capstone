@@ -488,10 +488,10 @@ async function onClickRequest2() {
 
     console.log('Result of get() request:', JSON.stringify(result, null, 2));
     if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('alumniOf')) {
-      console.log("앙 졸업띠");
+      window.open('https://www.jobkorea.co.kr/');
     }
     else {
-      console.log("졸업자 아닌데용?");
+      alert("졸업증명서가 아닙니다!");
     }
 }
 
