@@ -37,9 +37,21 @@ export default {
   mounted(){
     test.registerWalletWithBrowser();
     test.onDocumentReadyforwallet(() => {
+<<<<<<< HEAD
     document.getElementById('loginButton').addEventListener('click', test.login);
     document.getElementById('logoutButton').addEventListener('click', test.logout);
     test.refreshUserArea();
+=======
+      const loginBtn = document.getElementById('loginButton');
+      const logoutBtn = document.getElementById('logoutButton');
+      window.onload = function() {
+        loginBtn.addEventListener('click', test.login);
+      }
+      window.onload = function() {
+        logoutBtn.addEventListener('click', test.logout);
+      }
+      test.refreshUserArea();
+>>>>>>> 010287d677cfa3ef4087b8c3ee1b3a9fccb98dc7
     });
   }
 }
