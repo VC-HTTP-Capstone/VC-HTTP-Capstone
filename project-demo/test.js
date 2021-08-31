@@ -423,7 +423,7 @@ async function onClickRequest() {
           "query": [{
             "type": "QueryByExample",
             "credentialQuery": {
-              "reason": "Jmk5315가 팀원인지 검증을 요청합니다.",
+              "reason": "재학 중이시군요",
               "example": {
                 "@context": [
                   "https://w3id.org/credentials/v1",
@@ -453,11 +453,11 @@ async function onClickRequest() {
     document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
     console.log('Result of get() request:', JSON.stringify(result, null, 2));
-    if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('alumniOf')) {
-      console.log("앙 졸업띠");
-    }
     if(result.data.verifiableCredential.credentialSubject.hasOwnProperty('attendanceOf')) {
-      console.log("앙 재학띠");
+      window.open('https://www.hanyang.ac.kr/');
+    }
+    else {
+      alert("재학증명서가 아닙니다!");
     }
 }
 
