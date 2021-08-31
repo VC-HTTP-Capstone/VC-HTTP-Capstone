@@ -15,6 +15,8 @@ import Issuer2 from "../views/issuer2.vue"
 import Issuer3 from "../views/issuer3.vue"
 import Issuer4 from "../views/issuer4.vue"
 import Verifierinschool from "../views/verifier-inschool.vue";
+import Verifiergraduate from "../views/verifier-graduation.vue";
+
 
 
 Vue.use(VueRouter);
@@ -91,6 +93,10 @@ export const router = new VueRouter({
         {
           path: "/verifier-inschool",
           component: Verifierinschool
+        },
+        {
+          path: "/verifier-graduation",
+          component: Verifiergraduate
         },
     ]
 });
