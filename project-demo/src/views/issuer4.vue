@@ -17,6 +17,7 @@
         </div>
       </center>
     </div>
+    <input class="hide" type="radio" name="graduate" v-model="radioValues" value="graduate" v-on:click="ttest">
     <div class="child_side1"></div>
   </div>
 </template>
@@ -28,7 +29,7 @@
   export default {
     data(){
         return{
-            radioValues: '',
+            radioValues: 'graduate',
         }
     },
     mounted(){

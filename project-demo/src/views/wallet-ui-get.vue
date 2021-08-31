@@ -42,14 +42,11 @@ import test from '../../test.js'
 export default {
   mounted() {
     test.onDocumentReadyforwallet(() => {
-        //document.getElementById('loginButton').addEventListener('click', test.login);
-        const logoutBtn = document.getElementById('logoutButton');
-        window.onload = function() {
-          logoutBtn.addEventListener('click', test.logout);
-        }
-        test.refreshUserArea();
-    })
-    test.handleGetEvent();
+    //document.getElementById('loginButton').addEventListener('click', test.login);
+    document.getElementById('logoutButton').addEventListener('click', test.logout);
+    test.refreshUserArea();
+  })
+  test.handleGetEvent();
   }
 }
 </script>
