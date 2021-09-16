@@ -13,8 +13,10 @@
     "bootstrap-icons": "^1.5.0",
     "credential-handler-polyfill": "^2.2.1",
     "materialize-css": "^1.0.0-rc.2",
+    "onedrive-api": "^1.0.1",
     "v-clipboard": "^2.2.3",
     "vue": "^2.5.11",
+    "vue-dropbox-picker": "^0.1.1",
     "vue-router": "^3.5.2"
   },
   "browserslist": [

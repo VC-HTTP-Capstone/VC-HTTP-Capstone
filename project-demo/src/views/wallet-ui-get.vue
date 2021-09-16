@@ -45,6 +45,7 @@ export default {
     //document.getElementById('loginButton').addEventListener('click', test.login);
     document.getElementById('logoutButton').addEventListener('click', test.logout);
     test.refreshUserArea();
+    
   })
   test.handleGetEvent();
   }

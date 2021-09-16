@@ -8,12 +8,12 @@
           <span style="font-size:60px; margin-bottom:100px;">재학 증명서 발급</span>
         </div>
         <div style="font-size:20px;" class="ctest fadedin bordering t-font">
-          이름<br><br><input type="text" style="text-align:center;" id="name">
+          이름<br><br><input type="text" style="text-align:center;" v-model="vname">
           <br><br>
           <hr style="border: 1px solid gray ">
-          ID<br><br><input type="text" style="text-align:center;" id="id">
+          ID<br><br><input type="text" style="text-align:center;" v-model="vid">
           <br>
-          <button class="btn rcv-btn fadedin" type="button" id="confirmbutton">확인</button>
+          <button class="btn rcv-btn fadedin" type="button" v-on:click="savedata">확인</button>
         </div>
       </center>
     </div>
@@ -30,22 +30,21 @@
     data(){
         return{
             radioValues: 'attending',
+            vname: '',
+            vid: ''
         }
     },
     mounted(){
-      test.ready(() => {
-        document.getElementById('confirmbutton').addEventListener('click', test.cli);
-      })
     },
     methods:{
       ttest: function(){
         console.log(this.radioValues);
       },
-      testt: function(){
-        test.ready(() => {
-          document.getElementById('confirmbutton').addEventListener('click', test.cli);
-        })
-      }
+      savedata: function(){
+        const name = this.vname;
+        const id = this.vid;
+        test.cli(name,id);
+      },
     }
   }
 </script>

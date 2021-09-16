@@ -250,7 +250,7 @@ async function onClickReceive() {
         'https://chapi-demo-wallet.digitalbazaar.com'
       ]
     });
-
+  console.log("하이");
   //document.getElementById('storeResults').innerText = 'Storing credential...';
 
   // Use Credential Handler API to store
@@ -260,6 +260,7 @@ async function onClickReceive() {
   document.getElementById('storeResults').innerText = JSON.stringify(result, null, 2);
 
   console.log('Result of receiving via store() request:', result);
+  console.log("하이");
   //
   // if(!result) {
   //   document.getElementById('storeResults').innerHTML = 'null result';
@@ -509,12 +510,14 @@ async function onClickRequest2() {
 }
 
 
-function cli(){
+function cli(name,id){
   delete testCredential['verifiableCredential'][0]['credentialSubject']['alumniOf'];
   delete testCredential['verifiableCredential'][0]['credentialSubject']['attendanceOf'];
 
-  const name = document.getElementById('name').value;
-  const id = document.getElementById('id').value;
+
+  console.log(name);
+
+  console.log(id);
   saveCurrentUser(name);
   testCredential['verifiableCredential'][0]['id'] = "http://example.edu/credentials/" + id;
   console.log(testCredential['verifiableCredential'][0]['id']);
@@ -552,5 +555,5 @@ function cli(){
   onClickReceive();
 }
 
-const method = {onClickRequest2, cli, registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, login, logout, refreshUserArea, clearWalletDisplay, saveCurrentUser};
+const method = {onClickRequest2, cli, registerWalletWithBrowser, handleGetEvent, handleStoreEvent, onClickRequest, foo, onClickReceive, activateWalletEventHandler, ready, onDocumentReadyforstore, onDocumentReadyforwallet, onDocumentReadyforissuer, resetCurrentUser, login, logout, clearWalletStorage, refreshUserArea, clearWalletDisplay, saveCurrentUser};
 export default method

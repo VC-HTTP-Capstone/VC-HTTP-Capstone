@@ -13,7 +13,7 @@
           <center>
             <img src="../images/attending.png" style="margin-left: 35px" width="300" height="250">
             <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
+              <label style="font-size : 20px;"><input type="radio" name="attend" v-model="radioValues" value="attending">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재학증명서</label>
             </div>
           </center>
         </div>
@@ -21,7 +21,7 @@
           <center>
             <img src="../images/graduate.png" width="300" height="250">
             <div class="marg-tb">
-              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate" v-on:click="ttest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
+              <label style="font-size : 20px;"><input type="radio" name="graduate" v-model="radioValues" value="graduate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸업증명서</label>
             </div>
           </center>
         </div>
@@ -29,12 +29,12 @@
           <center>
             <div v-if="radioValues == 'attending'">
               <router-link to = "/issuer3">
-                <button class="btn rcv-btn fadedin" type="button" v-on:click="testt">확인</button>
+                <button class="btn rcv-btn fadedin" type="button">확인</button>
               </router-link>
             </div>
             <div v-else-if="radioValues == 'graduate'">
               <router-link to = "/issuer4">
-                <button class="btn rcv-btn fadedin" type="button" v-on:click="testt">확인</button>
+                <button class="btn rcv-btn fadedin" type="button">확인</button>
               </router-link>
             </div>
           </center>
@@ -46,30 +46,11 @@
 </template>
 
 <script>
-  import test from '../../test.js'
-
-
   export default {
     data(){
         return{
             radioValues: '',
         }
-    },
-    mounted(){
-      test.ready(() => {
-        document.getElementById('confirmbutton').addEventListener('click', test.cli);
-      })
-    },
-    methods:{
-      ttest: function(){
-        console.log(this.radioValues);
-      },
-      testt: function(){
-        document.getElementById('confirmbutton').addEventListener('click', test.cli);
-      },
-      test1 :function(){
-        console.log(this.radioValues);
-      }
     }
   }
 </script>

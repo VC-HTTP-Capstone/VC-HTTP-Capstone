@@ -14,11 +14,11 @@
             <br><br>
             <p><strong style="color:white" class="text bg-dark">증명서</strong></p><p> <span class="text3" id="walletContents"></span></p>
 
-            <a style="color:white" class="btn conf-btn" id="logoutButton">삭제</a>
+            <button style="color:white" class="btn conf-btn" v-on:click="logout">삭제</button>
           </div>
 
           <div class="hide" id="logged-out">
-            <a class="waves-effect waves-light btn" id="loginButton">Login</a>
+            <a class="waves-effect waves-light btn" v-on:click="login">Login</a>
           </div>
         </center>
       </div>
@@ -32,13 +32,54 @@
 <script>
 import test from '../../test.js'
 export default {
+  data(){
+    return{
+      username: '',
+    }
+  },
+
   mounted(){
-    test.registerWalletWithBrowser();
+    this.registerWalletWithBrowser();
+    this.tttest();
     test.onDocumentReadyforwallet(() => {
-    document.getElementById('loginButton').addEventListener('click', test.login);
-    document.getElementById('logoutButton').addEventListener('click', test.logout);
-    test.refreshUserArea();
+      test.refreshUserArea();
     });
+  },
+  methods : {
+    registerWalletWithBrowser: async function(){
+      await credentialHandlerPolyfill.loadOnce(MEDIATOR);
+
+      const registration = await WebCredentialHandler.installHandler({url: workerUrl});
+
+      await registration.credentialManager.hints.set(
+        'test', {
+          name: 'TestUser',
+          enabledTypes: ['VerifiablePresentation', 'VerifiableCredential', 'AlumniCredential']
+        });
+    },
+    logout: function(){
+      const walletContents = Cookies.get('walletContents');
+
+      if(!walletContents) {
+        return alert('There is no Credential');
+      }
+      else {
+        this.resetCurrentUser();
+        test.clearWalletDisplay();
+        test.clearWalletStorage();
+        test.refreshUserArea();
+      }
+    },
+    login: function() {
+      test.refreshUserArea();
+    },
+    resetCurrentUser: function() {
+      Cookies.remove('username', {path: ''});
+    },
+    tttest: function() {
+      console.log("낼름");
+      console.log(this.username);
+    }
   }
 }
 </script>

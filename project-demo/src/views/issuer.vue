@@ -26,15 +26,6 @@
   //document.getElementById('loginButton').addEventListener('click', test.login);
   //test.refreshUserArea();
   export default {
-    mounted(){
-      test.ready(() => {
-        const receiveBtn = document.getElementById('receiveButton');
-        window.onload = function() {
-          receiveBtn.addEventListener('click', test.onClickReceive);
-        }
-        console.log('Document ready.')
-      })
-    }
   }
 </script>
 
