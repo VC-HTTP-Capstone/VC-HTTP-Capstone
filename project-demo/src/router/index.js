@@ -16,6 +16,7 @@ import Issuer3 from "../views/issuer3.vue"
 import Issuer4 from "../views/issuer4.vue"
 import Verifierinschool from "../views/verifier-inschool.vue";
 import Verifiergraduate from "../views/verifier-graduation.vue";
+import Login from "../views/login.vue";
 
 
 
@@ -35,6 +36,10 @@ export const router = new VueRouter({
         {
             path: "/issuer", //path: url 주소
             component: Issuer // component: url주소로 갔을 때 표시될 컴포넌트
+        },
+        {
+            path: "/login", //홈
+            component: Login //홈을 /news로 리다이렉팅
         },
         {
             path: "/issuer2", //path: url 주소

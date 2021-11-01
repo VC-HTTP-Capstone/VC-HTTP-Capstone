@@ -19,6 +19,9 @@
         <router-link to = "/verifier">
           <button class="btn btn-outline-secondary mr-3 navbar-item" type="button">verifier</button>
         </router-link>
+        <router-link to = "/login">
+          <button class="btn btn-outline-secondary mr-3 navbar-item" type="button">login</button>
+        </router-link>
       </form>
       <!-- <router-link to = "/test1" class="navbar-item ml-auto">test1</router-link>
       <router-link to = "/test2" class="navbar-item">test2</router-link> -->
